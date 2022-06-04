@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:quizzle/controllers/controllers.dart';
+import 'package:quizzle/screens/home/Dashboard.dart';
 import 'package:quizzle/screens/screens.dart';
 
 class AppRoutes {
@@ -13,11 +14,17 @@ class AppRoutes {
           name: AppIntroductionScreen.routeName,
         ),
         GetPage(
+            page: () => const dashboard(),
+            name: dashboard.routeName,
+            binding: BindingsBuilder(() {
+              Get.put(MyDrawerController());
+            })),
+        GetPage(
             page: () => const HomeScreen(),
             name: HomeScreen.routeName,
             binding: BindingsBuilder(() {
               Get.put(QuizPaperController());
-              Get.put(MyDrawerController());
+              // Get.put(MyDrawerController());
             })),
         GetPage(page: () => const LoginScreen(), name: LoginScreen.routeName),
         GetPage(

@@ -33,9 +33,9 @@ class MyDrawerController extends GetxController {
     _launch(emailLaunchUri.toString());
   }
 
-  void downloadSourceCode() {
-    _launch('https://github.com/CodeFoxLk/quizzle_public.git');
-  }
+  // void downloadSourceCode() {
+  //   _launch('https://github.com/CodeFoxLk/quizzle_public.git');
+  // }
 
   @override
   void onReady() {

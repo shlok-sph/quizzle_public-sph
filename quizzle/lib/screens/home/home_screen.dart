@@ -1,10 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:get/get.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'package:quizzle/configs/configs.dart';
 import 'package:quizzle/controllers/controllers.dart';
+import 'package:quizzle/screens/home/dashboard.dart';
 import 'package:quizzle/widgets/widgets.dart';
 
 import 'custom_drawer.dart';
@@ -13,7 +13,6 @@ class HomeScreen extends GetView<MyDrawerController> {
   const HomeScreen({Key? key}) : super(key: key);
 
   static const String routeName = '/home';
-  
 
   @override
   Widget build(BuildContext context) {
@@ -43,8 +42,13 @@ class HomeScreen extends GetView<MyDrawerController> {
                       Transform.translate(
                         offset: const Offset(-10, 0),
                         child: CircularButton(
-                          child: const Icon(AppIcons.menuleft),
-                          onTap: controller.toggleDrawer,
+                          // child: const Icon(AppIcons.menu),
+                          child: const Icon
+                          (
+                            Icons.home,
+                            size: 20,
+                          ),
+                          onTap: () => Get.offAndToNamed(dashboard.routeName),
                         ),
                       ),
                       const SizedBox(height: 10),
