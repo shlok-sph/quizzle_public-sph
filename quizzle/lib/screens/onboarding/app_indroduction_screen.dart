@@ -24,14 +24,26 @@ class AppIntroductionScreen extends GetView<AuthController> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SvgPicture.asset('assets/images/app_splash_logo.svg'),
+              Container(
+                height: 180.0,
+                width: 180.0,
+                margin: const EdgeInsets.only(right: 20),
+                decoration: const BoxDecoration(
+                    // shape: BoxShape.circle,
+                    image: DecorationImage(
+                        image: AssetImage('assets/images/study_bg.png'),
+                        fit: BoxFit.cover)),
+              ),
+              // SvgPicture.asset('assets/images/book.png'),
               const Padding(
                 padding: EdgeInsets.symmetric(vertical: 60),
                 child: Text(
-                  'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                  'Welcome to SPH',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      color: kOnSurfaceTextColor, fontWeight: FontWeight.bold),
+                      color: kOnSurfaceTextColor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30),
                 ),
               ),
               MainButton(

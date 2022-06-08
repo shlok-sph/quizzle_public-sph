@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'package:quizzle/configs/configs.dart';
 import 'package:quizzle/controllers/controllers.dart';
+import 'package:quizzle/pdf/pdfveiwer.dart';
 import 'package:quizzle/screens/screens.dart';
 import 'package:quizzle/widgets/widgets.dart';
 import 'custom_drawer.dart';
@@ -67,7 +68,7 @@ class dashboard extends GetView<MyDrawerController> {
                           ],
                         ),
                       ),
-                      const Text('Trial App', style: kHeaderTS),
+                      const Text('Dashboard', style: kHeaderTS),
                       const SizedBox(height: 15),
                     ],
                   ),
@@ -105,7 +106,7 @@ class dashboard extends GetView<MyDrawerController> {
                   height: 50.0,
                   margin: const EdgeInsets.all(40),
                   child: RaisedButton(
-                    onPressed: () => Get.offAndToNamed(HomeScreen.routeName),
+                    onPressed: () => Get.offAndToNamed(pdfpage.routeName),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(80.0)),
                     padding: const EdgeInsets.all(5.0),
