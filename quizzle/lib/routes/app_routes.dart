@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:quizzle/controllers/controllers.dart';
+import 'package:quizzle/pdf/pdfmain.dart';
 import 'package:quizzle/pdf/pdfveiwer.dart';
 import 'package:quizzle/screens/home/Dashboard.dart';
 import 'package:quizzle/screens/screens.dart';
@@ -20,6 +21,10 @@ class AppRoutes {
             binding: BindingsBuilder(() {
               Get.put(MyDrawerController());
             })),
+        GetPage(
+            page: () => const pdfmain(),
+            name: pdfmain.routeName,
+            ),
         GetPage(
           page: () => const pdfpage(),
           name: pdfpage.routeName,

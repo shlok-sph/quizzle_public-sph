@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'package:quizzle/configs/configs.dart';
 import 'package:quizzle/controllers/controllers.dart';
+import 'package:quizzle/pdf/pdfmain.dart';
 import 'package:quizzle/pdf/pdfveiwer.dart';
 import 'package:quizzle/screens/screens.dart';
 import 'package:quizzle/widgets/widgets.dart';
@@ -106,7 +107,7 @@ class dashboard extends GetView<MyDrawerController> {
                   height: 50.0,
                   margin: const EdgeInsets.all(40),
                   child: RaisedButton(
-                    onPressed: () => Get.offAndToNamed(pdfpage.routeName),
+                    onPressed: () => Get.offAndToNamed(pdfmain.routeName),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(80.0)),
                     padding: const EdgeInsets.all(5.0),
