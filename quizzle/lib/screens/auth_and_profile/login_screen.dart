@@ -23,7 +23,7 @@ class LoginScreen extends GetView<AuthController> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SvgPicture.asset('assets/images/app_splash_logo.svg'),
+              SvgPicture.asset('assets/images/Sheth.svg'),
               const Padding(
                 padding: EdgeInsets.symmetric(vertical: 60),
                 child: Text(

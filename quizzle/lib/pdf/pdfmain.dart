@@ -8,6 +8,9 @@ import 'package:quizzle/pdf/pdfveiwer.dart';
 import 'package:quizzle/screens/screens.dart';
 import 'package:quizzle/screens/home/dashboard.dart';
 import 'package:quizzle/widgets/widgets.dart';
+import 'package:quizzle/controllers/quiz_paper/pdf_controller.dart';
+import 'package:quizzle/widgets/home/pdf_paper_card.dart';
+import 'package:quizzle/models/pdf_model.dart';
 
 class pdfmain extends GetView<MyDrawerController> {
   const pdfmain({Key? key}) : super(key: key);
@@ -16,6 +19,7 @@ class pdfmain extends GetView<MyDrawerController> {
 
   @override
   Widget build(BuildContext context) {
+    PdfController _quizePprContoller2 = Get.find();
     return Scaffold(
         body: GetBuilder<MyDrawerController>(
       builder: (_) => ZoomDrawer(
@@ -67,7 +71,43 @@ class pdfmain extends GetView<MyDrawerController> {
                     ],
                   ),
                 ),
-              ]
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    child: ContentArea(
+                      addPadding: false,
+                      child: Obx(
+                        () => LiquidPullToRefresh(
+                          height: 150,
+                          springAnimationDurationInMilliseconds: 500,
+                          //backgroundColor: Theme.of(context).primaryColor.withOpacity(0.1),
+                          color:
+                              Theme.of(context).primaryColor.withOpacity(0.5),
+                          onRefresh: () async {
+                            _quizePprContoller2.getAllPapers();
+                          },
+                          child: ListView.separated(
+                            padding: UIParameters.screenPadding,
+                            shrinkWrap: true,
+                            itemCount: _quizePprContoller2.allPapers.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return QuizPaperCard1(
+                                model: _quizePprContoller2.allPapers[index],
+                              );
+                            },
+                            separatorBuilder:
+                                (BuildContext context, int index) {
+                              return const SizedBox(
+                                height: 20,
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                )
+              ],
             ),
           ),
         ),

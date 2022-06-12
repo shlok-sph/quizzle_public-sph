@@ -6,6 +6,7 @@ import 'package:quizzle/configs/configs.dart';
 import 'package:quizzle/controllers/controllers.dart';
 import 'package:quizzle/pdf/pdfmain.dart';
 import 'package:quizzle/pdf/pdfveiwer.dart';
+import 'package:quizzle/qrscan/qrcode.dart';
 import 'package:quizzle/screens/screens.dart';
 import 'package:quizzle/widgets/widgets.dart';
 import 'custom_drawer.dart';
@@ -125,6 +126,35 @@ class dashboard extends GetView<MyDrawerController> {
                         alignment: Alignment.center,
                         child: const Text(
                           "Books",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(color: Color.fromARGB(255, 0, 0, 0), fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                 Container(
+                  height: 50.0,
+                  margin: const EdgeInsets.all(40),
+                  child: RaisedButton(
+                    onPressed: () => Get.offAndToNamed(qrcode.routeName),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(80.0)),
+                    padding: const EdgeInsets.all(5.0),
+                    child: Ink(
+                      decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [Color.fromARGB(255, 255, 255, 255), Color.fromARGB(255, 255, 255, 255)],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          ),
+                          borderRadius: BorderRadius.circular(30.0)),
+                      child: Container(
+                        constraints: const BoxConstraints(
+                            maxWidth: 500.0, minHeight: 50.0),
+                        alignment: Alignment.center,
+                        child: const Text(
+                          "Qr Scanner",
                           textAlign: TextAlign.center,
                           style: TextStyle(color: Color.fromARGB(255, 0, 0, 0), fontSize: 20, fontWeight: FontWeight.bold),
                         ),

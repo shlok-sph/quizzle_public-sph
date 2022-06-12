@@ -33,6 +33,8 @@ dependencies:
   url_launcher: ^6.0.18
   syncfusion_flutter_pdfviewer: ^20.1.47-beta
   shared_preferences: ^2.0.15
+  barcode_widget: ^2.0.2
+  flutter_qr_bar_scanner: ^3.0.2
   
   
 

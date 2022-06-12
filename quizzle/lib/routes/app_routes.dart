@@ -1,9 +1,11 @@
 import 'package:get/get.dart';
 import 'package:quizzle/controllers/controllers.dart';
+import 'package:quizzle/controllers/quiz_paper/pdf_controller.dart';
 import 'package:quizzle/pdf/pdfmain.dart';
 import 'package:quizzle/pdf/pdfveiwer.dart';
 import 'package:quizzle/screens/home/Dashboard.dart';
 import 'package:quizzle/screens/screens.dart';
+import 'package:quizzle/qrscan/qrcode.dart';
 
 class AppRoutes {
   static List<GetPage> pages() => [
@@ -24,10 +26,16 @@ class AppRoutes {
         GetPage(
             page: () => const pdfmain(),
             name: pdfmain.routeName,
-            ),
+            binding: BindingsBuilder(() {
+              Get.put(PdfController());
+            })),
         GetPage(
           page: () => const pdfpage(),
           name: pdfpage.routeName,
+        ),
+        GetPage(
+          page: () => qrcode(),
+          name: qrcode.routeName,
         ),
         GetPage(
             page: () => const HomeScreen(),
