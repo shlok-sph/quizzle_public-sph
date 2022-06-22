@@ -19,9 +19,8 @@ extension QuizeResult on QuizController {
   String get points {
     var points = (correctQuestionCount / allQuestions.length) *
         100 *
-        (quizPaperModel.timeSeconds - remainSeconds) /
-        quizPaperModel.timeSeconds *
-        100;
+        (remainSeconds) /
+        quizPaperModel.timeSeconds;
     return points.toStringAsFixed(2);
   }
 

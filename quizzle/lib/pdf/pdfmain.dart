@@ -11,6 +11,8 @@ import 'package:quizzle/widgets/widgets.dart';
 import 'package:quizzle/controllers/quiz_paper/pdf_controller.dart';
 import 'package:quizzle/widgets/home/pdf_paper_card.dart';
 import 'package:quizzle/models/pdf_model.dart';
+import 'package:quizzle/qrscan/qrcode.dart';
+
 
 class pdfmain extends GetView<MyDrawerController> {
   const pdfmain({Key? key}) : super(key: key);
@@ -21,6 +23,12 @@ class pdfmain extends GetView<MyDrawerController> {
   Widget build(BuildContext context) {
     PdfController _quizePprContoller2 = Get.find();
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+          child: const Icon(
+            Icons.qr_code_outlined,
+          ),
+          onPressed: () => Get.offAndToNamed(qrcode.routeName),
+        ),
         body: GetBuilder<MyDrawerController>(
       builder: (_) => ZoomDrawer(
         controller: _.zoomDrawerController,

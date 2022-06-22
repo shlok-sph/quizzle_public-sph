@@ -18,17 +18,8 @@ class HomeScreen extends GetView<MyDrawerController> {
   Widget build(BuildContext context) {
     QuizPaperController _quizePprContoller = Get.find();
     return Scaffold(
-        body: GetBuilder<MyDrawerController>(
-      builder: (_) => ZoomDrawer(
-        controller: _.zoomDrawerController,
-        borderRadius: 50.0,
-        showShadow: true,
-        angle: 0.0,
-        style: DrawerStyle.DefaultStyle,
-        menuScreen: const CustomDrawer(),
-        backgroundColor: Colors.white.withOpacity(0.5),
-        slideWidth: MediaQuery.of(context).size.width * 0.6,
-        mainScreen: Container(
+        body: (
+        Container(
           decoration: BoxDecoration(gradient: mainGradient(context)),
           child: SafeArea(
             child: Column(
@@ -118,8 +109,8 @@ class HomeScreen extends GetView<MyDrawerController> {
               ],
             ),
           ),
-        ),
+        )
       ),
-    ));
+    );
   }
 }
