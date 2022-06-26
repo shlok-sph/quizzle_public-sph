@@ -107,7 +107,7 @@ class LeaderBoardCard extends StatelessWidget {
               color: Theme.of(context).primaryColor,
             ),
             text: Text(
-              '${data.time!}',
+              '${data.time!}' ' secs',
               style: tsStyle,
             ),
           ),

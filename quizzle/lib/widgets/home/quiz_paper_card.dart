@@ -75,7 +75,7 @@ class QuizPaperCard extends GetView<QuizPaperController> {
                                   icon: Icon(Icons.help_outline_sharp,
                                       color: Colors.blue[700]),
                                   text: Text(
-                                    '${model.questionsCount} quizzes',
+                                    '${model.questionsCount} questions',
                                     style: kDetailsTS.copyWith(
                                         color: Colors.blue[700]),
                                   )),

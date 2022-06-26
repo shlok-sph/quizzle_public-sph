@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:quizzle/configs/configs.dart';
 import 'package:quizzle/controllers/controllers.dart';
 import 'package:quizzle/screens/auth_and_profile/profile_screen.dart';
+import 'package:quizzle/pdf/pdfmain.dart';
 
 class CustomDrawer extends GetView<MyDrawerController> {
   const CustomDrawer({Key? key}) : super(key: key);
@@ -80,14 +81,14 @@ class CustomDrawer extends GetView<MyDrawerController> {
                   ),
                   const Spacer(flex: 1),
                   _DrawerButton(
-                      onPressed: () => controller.github(),
-                      icon: AppIcons.github,
+                      onPressed: () => Get.offAndToNamed(pdfmain.routeName),
+                      icon: Icons.book,
                       label: 'My Books'),
-                  // _DrawerButton(
-                  //   icon: Icons.code,
-                  //   label: ' Download Source Code',
-                  //   onPressed: () => controller.downloadSourceCode(),
-                  // ),
+                  _DrawerButton(
+                    icon: Icons.menu_book_sharp,
+                    label: 'Buy a book',
+                    onPressed: () => controller.website(),
+                  ),
                   _DrawerButton(
                       icon: AppIcons.contact,
                       label: 'Contact Us',
@@ -98,13 +99,17 @@ class CustomDrawer extends GetView<MyDrawerController> {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         _DrawerButton(
-                            icon: AppIcons.web, label: 'Web', onPressed: () {}),
+                            icon: Icons.location_pin,
+                            label: 'Address',
+                            onPressed: () => controller.address()),
                         _DrawerButton(
-                            icon: AppIcons.email,
+                            icon: Icons.mail,
                             label: 'Email',
-                            onPressed:  () => controller.email()),
+                            onPressed: () => controller.email()),
                         _DrawerButton(
-                            icon: AppIcons.web, label: 'Phone', onPressed: () {}),
+                            icon: Icons.phone,
+                            label: 'Phone',
+                            onPressed: () => controller.phone()),
                         // _DrawerButton(
                         //     icon: AppIcons.github,
                         //     label: 'GitHub',
